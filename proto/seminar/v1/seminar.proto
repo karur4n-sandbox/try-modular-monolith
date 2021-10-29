@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package try_modular_monolith.seminar.v1;
+
+option go_package = "github.com/karur4n-sandbox/try-modular-monolith/seminar/v1";
+
+service SeminarService {
+  rpc ListSeminars(ListSeminarsRequest) returns (ListSeminarsResponse);
+}
+
+message Seminar {
+  string id = 1;
+  string title = 2;
+}
+
+message ListSeminarsRequest {
+}
+
+message ListSeminarsResponse {
+  repeated Seminar seminars = 1;
+}
